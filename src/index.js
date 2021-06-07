@@ -9,18 +9,22 @@
 import React from "react";
 import ReactDom from "react-dom";
 // const h1 = "something"
-
+const color = {
+  color: "red"
+};
 function time() {
   const t = new Date();
   const tt = t.getHours();
   if (tt > 0 && tt <= 12) {
-    const h1 = <h1>Good Morning</h1>;
+    color.color = "blue";
+    const h1 = <h1 style={color}>Good Morning</h1>;
     return h1;
   } else if (tt > 12 && tt <= 18) {
-    const h1 = <h1>Good Afternoon</h1>;
+    color.color = "Green";
+    const h1 = <h1 style={color}>Good Afternoon</h1>;
     return h1;
   } else if (tt > 18) {
-    const h1 = <h1>Good evening</h1>;
+    const h1 = <h1 style={color}>Good evening</h1>;
     return h1;
   }
 }
