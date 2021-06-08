@@ -8,7 +8,7 @@
 
 import React from "react";
 import ReactDom from "react-dom";
-// const h1 = "something"
+let h1;
 const color = {
   color: "red"
 };
@@ -17,16 +17,22 @@ function time() {
   const tt = t.getHours();
   if (tt > 0 && tt <= 12) {
     color.color = "blue";
-    const h1 = <h1 style={color}>Good Morning</h1>;
+    h1 = "Good Morning";
     return h1;
   } else if (tt > 12 && tt <= 18) {
     color.color = "Green";
-    const h1 = <h1 style={color}>Good Afternoon</h1>;
+    const h1 = "Good Afternoon";
     return h1;
   } else if (tt > 18) {
-    const h1 = <h1 style={color}>Good evening</h1>;
+    color.color = "red";
+    const h1 = "Good Evening";
     return h1;
   }
 }
 
-ReactDom.render(<div>{time()}</div>, document.getElementById("root"));
+ReactDom.render(
+  <div>
+    <h1 style={color}> {time()}</h1>
+  </div>,
+  document.getElementById("root")
+);
