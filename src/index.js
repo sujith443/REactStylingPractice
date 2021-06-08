@@ -8,31 +8,12 @@
 
 import React from "react";
 import ReactDom from "react-dom";
-let h1;
-const color = {
-  color: "red"
-};
-function time() {
-  const t = new Date();
-  const tt = t.getHours();
-  if (tt > 0 && tt <= 12) {
-    color.color = "blue";
-    h1 = "Good Morning";
-    return h1;
-  } else if (tt > 12 && tt <= 18) {
-    color.color = "Green";
-    const h1 = "Good Afternoon";
-    return h1;
-  } else if (tt > 18) {
-    color.color = "red";
-    const h1 = "Good Evening";
-    return h1;
-  }
-}
-
+import Time from "./heading";
+import Li from "./list";
 ReactDom.render(
   <div>
-    <h1 style={color}> {time()}</h1>
+    <Time />
+    <Li />
   </div>,
   document.getElementById("root")
 );
